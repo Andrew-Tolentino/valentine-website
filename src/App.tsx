@@ -1,21 +1,12 @@
-import { useState, useEffect, CSSProperties } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-
-interface NoButtonStyle extends CSSProperties {
-  position: 'relative';
-  left: number;
-  top: number;
-}
 
 function App() {
   const [hasAccepted, setHasAccepted] = useState<boolean>(false)
   const [timeRemaining, setTimeRemaining] = useState<string>('')
   const [isValentinesDay, setIsValentinesDay] = useState<boolean>(false)
-  const [noButtonStyle, setNoButtonStyle] = useState<NoButtonStyle>({ 
-    position: 'relative', 
-    left: 0, 
-    top: 0 
-  })
+  const [noButtonScale, setNoButtonScale] = useState<number>(1)
+  const [noButtonText, setNoButtonText] = useState<string>('No')
 
   useEffect(() => {
     // Check localStorage for acceptance
@@ -68,15 +59,22 @@ function App() {
     setHasAccepted(true)
   }
 
-  const handleNoHover = () => {
-    const randomX = Math.random() * 200 - 100
-    const randomY = Math.random() * 200 - 100
-    setNoButtonStyle({
-      position: 'relative',
-      left: randomX,
-      top: randomY,
-      transition: 'all 0.3s ease'
-    })
+  const handleNoClick = () => {
+    const newScale = noButtonScale * 0.8
+    setNoButtonScale(newScale)
+    
+    // Change text based on how many times they've clicked
+    if (newScale > 0.6) {
+      setNoButtonText('Are you sure?')
+    } else if (newScale > 0.4) {
+      setNoButtonText('Really?')
+    } else if (newScale > 0.2) {
+      setNoButtonText('Please? 🥺')
+    } else if (newScale > 0.1) {
+      setNoButtonText('Think again!')
+    } else {
+      setNoButtonText('😢')
+    }
   }
 
   if (hasAccepted && isValentinesDay) {
@@ -118,11 +116,14 @@ function App() {
             Yes! 💕
           </button>
           <button 
-            onMouseEnter={handleNoHover}
-            style={noButtonStyle}
+            onClick={handleNoClick}
+            style={{
+              transform: `scale(${noButtonScale})`,
+              transition: 'all 0.3s ease'
+            }}
             className="btn btn-no"
           >
-            No
+            {noButtonText}
           </button>
         </div>
       </div>
