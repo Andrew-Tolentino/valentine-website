@@ -1,0 +1,141 @@
+.container {
+  background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.content.question {
+  max-width: 500px;
+}
+
+.emoji-large {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.emoji-pulse {
+  font-size: 100px;
+  margin-bottom: 30px;
+  animation: pulse 2s infinite;
+}
+
+.title {
+  font-size: 3rem;
+  color: #d63384;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #c2185b;
+  margin-bottom: 40px;
+}
+
+.content.countdown .subtitle,
+.content.valentine-day .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.timer-box {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(214, 51, 132, 0.2);
+  display: inline-block;
+}
+
+.timer-display {
+  font-size: 2.5rem;
+  color: #d63384;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+}
+
+.timer-label {
+  font-size: 1rem;
+  color: #c2185b;
+  margin-top: 10px;
+}
+
+.button-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 18px 50px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #ff6b9d 0%, #c2185b 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+}
+
+.btn-yes:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(214, 51, 132, 0.4);
+}
+
+.btn-no {
+  background: white;
+  color: #c2185b;
+  border: 2px solid #ffb3d9;
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1); 
+  }
+  50% { 
+    transform: scale(1.1); 
+  }
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .timer-display {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+  }
+}
