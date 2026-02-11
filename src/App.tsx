@@ -81,9 +81,9 @@ function App() {
     return (
       <div className="container">
         <div className="content valentine-day">
-          <div className="emoji-large">💕</div>
-          <h1 className="title">Happy Valentine's Day!</h1>
-          <p className="subtitle">This day is finally here! 💖</p>
+          <h1 className="title">💕 Happy Valentine's Day 💕</h1>
+          <p className="subtitle">I look forward to our virtual date and our future Valentine's Dates in person</p>
+          <p className="subtitle">Track Link</p>
         </div>
       </div>
     )
@@ -100,6 +100,7 @@ function App() {
             <div className="timer-display">{timeRemaining}</div>
             <div className="timer-label">until Valentine's Day 💖</div>
           </div>
+          <p className="subtitle" style={{ marginBottom: "0px", marginTop: "40px" }}>😙 Please check again on Valentine's Day 😙</p>
         </div>
       </div>
     )
