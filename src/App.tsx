@@ -84,9 +84,6 @@ function App() {
           <h1 className="title">💕 Happy Valentine's Day 💕</h1>
           <p className="subtitle">I look forward to our virtual date and our future Valentine's Dates in person</p>
           <p className="subtitle">💐🍫🧸💌</p>
-          <p className="subtitle">Track Link - <a href="https://www.euroflorist.de/en/order-tracking" target="_blank">https://www.euroflorist.de/en/order-tracking</a></p>
-          <p className="subtitle">Email - andrew.tolentino.social@gmail.com</p>
-          <p className="subtitle">Order # - DE23697196</p>
         </div>
       </div>
     )
